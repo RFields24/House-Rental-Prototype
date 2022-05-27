@@ -7,17 +7,107 @@ const options = {
 };
 const getProperty = async() => {
 		
-	// const response = await fetch('https://us-real-estate.p.rapidapi.com/for-sale?offset=0&limit=6&state_code=MI&city=Detroit&sort=newest', options)
-	// const data = await response.json();
-	// let props = Object.entries(data.data.results)
-	// console.log(props)
+	const response = await fetch('https://us-real-estate.p.rapidapi.com/for-sale?offset=0&limit=10&state_code=MI&city=Detroit&sort=newest', options)
+	const data = await response.json();
+	let props = Object.entries(data.data.results)
+	console.log(props)
 
-	let price = document.querySelectorAll('#propPrice')
-	price.forEach((price,prop) =>{
-		props.forEach(((props, prop)=>{
-			price.innerText = (props[prop][1].list_price)
-		}))
-	})
+	// class MakeProperty{
+	// 	// constructor(pic,price,beds,baths){
+	// 	// 	this.propPic = pic
+	// 	// 	this.propPrice = price
+	// 	// 	this.propBeds = beds
+	// 	// 	this.propBaths = baths
+
+	// 	// 	// this.populatePic = function(){
+	// 	// 	// 	document.querySelectorAll('#propPic').src = `${pic}`
+	// 	// 	// // }
+	// 	// 	// this.populatePrice = function(){
+	// 	// 	// 	document.querySelectorAll('#propPrice').innerText = `${price}`
+	// 	// 	// }
+	// 	// 	// this.populateBeds = function(){
+	// 	// 	// 	document.querySelectorAll('#propBeds').innerText = `${beds}`
+	// 	// 	// }
+	// 	// 	// this.populateBaths = function(){
+	// 	// 	// 	document.querySelectorAll('#propBaths').innerText = `${baths}`
+	// 	// 	// }
+			
+			
+		// }
+
+	// PROPERTY IMAGES!!!
+
+	let prop1Pic = props[1][1].primary_photo.href;
+	console.log(prop1Pic);
+	document.querySelector("#propOnePic").src = `${prop1Pic}`;
+
+	let prop2Pic = props[2][1].primary_photo.href;
+	console.log(prop1Pic);
+	document.querySelector("#propTwoPic").src = `${prop2Pic}`;
+
+	let prop3Pic = props[3][1].primary_photo.href;
+	console.log(prop1Pic);
+	document.querySelector("#propThreePic").src = `${prop3Pic}`;
+
+	let prop4Pic = props[4][1].primary_photo.href;
+	console.log(prop1Pic);
+	document.querySelector("#propFourPic").src = `${prop4Pic}`;
+
+	let prop5Pic = props[5][1].primary_photo.href;
+	console.log(prop1Pic);
+	document.querySelector("#propFivePic").src = `${prop5Pic}`;
+
+	let prop6Pic = props[6][1].primary_photo.href;
+	console.log(prop1Pic);
+	document.querySelector("#propSixPic").src = `${prop6Pic}`;
+	
+	// PROPERTY PRICE!!
+
+
+	let prop1Price = props[1][1].list_price;
+	console.log(prop1Price);
+	document.querySelector('#propOnePrice').innerText = `${prop1Price}`;
+
+	let prop2Price = props[2][1].list_price;
+	console.log(prop1Price);
+	document.querySelector('#propTwoPrice').innerText = `${prop2Price}`;
+
+	let prop3Price = props[3][1].list_price;
+	console.log(prop1Price);
+	document.querySelector('#propThreePrice').innerText = `${prop3Price}`;
+
+	let prop4Price = props[4][1].list_price;
+	console.log(prop1Price);
+	document.querySelector('#propFourPrice').innerText = `${prop4Price}`;
+
+	let prop5Price = props[5][1].list_price;
+	console.log(prop1Price);
+	document.querySelector('#propFivePrice').innerText = `${prop5Price}`;
+
+	let prop6Price = props[6][1].list_price;
+	console.log(prop1Price);
+	document.querySelector('#propSixPrice').innerText = `${prop6Price}`;
+
+
+
+	let prop1Beds = props[0][1].description.beds;
+	console.log(prop1Beds)
+
+	let prop1Baths = props[0][1].description.baths
+	console.log(prop1Baths)
+	 
+	// let property1 = new MakeProperty(`${prop1Pic}`, `${prop1Price}`, `${prop1Beds}`, `${prop1Baths}`)
+	// console.log(property1)
+
+
+
+
+	// let price = document.querySelectorAll('#propPrice')
+	// price.forEach((price,prop) =>{
+	// 	props.forEach(((props, prop)=>{
+	// 		price.innerText = (props[prop][1].list_price)
+	// 	}))
+	// })
 	// props.forEach((props) => {
 	// 	let beds = document.querySelectorAll('#propBeds')
 	// 	beds.forEach((beds)=> {
@@ -71,4 +161,4 @@ const getProperty = async() => {
 	// console.log(price)
 	// console.log(baths)
 	// console.log(beds)
-getProperty()
+// getProperty()
