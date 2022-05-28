@@ -66,38 +66,80 @@ const getProperty = async() => {
 
 	let prop1Price = props[1][1].list_price;
 	console.log(prop1Price);
-	document.querySelector('#propOnePrice').innerText = `${prop1Price}`;
+	document.querySelector('#propOnePrice').innerHTML = `${prop1Price}`;
 
 	let prop2Price = props[2][1].list_price;
-	console.log(prop1Price);
+	console.log(prop2Price);
 	document.querySelector('#propTwoPrice').innerText = `${prop2Price}`;
 
 	let prop3Price = props[3][1].list_price;
-	console.log(prop1Price);
+	console.log(prop3Price);
 	document.querySelector('#propThreePrice').innerText = `${prop3Price}`;
 
 	let prop4Price = props[4][1].list_price;
-	console.log(prop1Price);
+	console.log(prop4Price);
 	document.querySelector('#propFourPrice').innerText = `${prop4Price}`;
 
 	let prop5Price = props[5][1].list_price;
-	console.log(prop1Price);
+	console.log(prop5Price);
 	document.querySelector('#propFivePrice').innerText = `${prop5Price}`;
 
 	let prop6Price = props[6][1].list_price;
-	console.log(prop1Price);
+	console.log(prop6Price);
 	document.querySelector('#propSixPrice').innerText = `${prop6Price}`;
 
+	// PROPERTY BEDS!!
 
-
-	let prop1Beds = props[0][1].description.beds;
+	let prop1Beds = props[1][1].description.beds;
 	console.log(prop1Beds)
+	document.querySelector('#propOneBeds').innerText = `${prop1Beds}`;
 
-	let prop1Baths = props[0][1].description.baths
+	let prop2Beds = props[2][1].description.beds;
+	console.log(prop2Beds)
+	document.querySelector('#propTwoBeds').innerText = `${prop2Beds}`;
+
+	let prop3Beds = props[3][1].description.beds;
+	console.log(prop3Beds)
+	document.querySelector('#propThreeBeds').innerText = `${prop3Beds}`;
+
+	let prop4Beds = props[4][1].description.beds;
+	console.log(prop4Beds)
+	document.querySelector('#propFourBeds').innerText = `${prop4Beds}`;
+
+	let prop5Beds = props[5][1].description.beds;
+	console.log(prop5Beds)
+	document.querySelector('#propFiveBeds').innerText = `${prop5Beds}`;
+
+	let prop6Beds = props[6][1].description.beds;
+	console.log(prop6Beds)
+	document.querySelector('#propSixBeds').innerText = `${prop6Beds}`;
+
+	// PROPERTY BATHS!!!
+
+	let prop1Baths = props[1][1].description.baths
 	console.log(prop1Baths)
+	document.querySelector('#propOneBaths').innerText = `${prop1Baths}`
+
+	let prop2Baths = props[2][1].description.baths
+	console.log(prop2Baths)
+	document.querySelector('#propTwoBaths').innerText = `${prop2Baths}`
+	
+	let prop3Baths = props[3][1].description.baths
+	console.log(prop3Baths)
+	document.querySelector('#propThreeBaths').innerText = `${prop3Baths}`
+
+	let prop4Baths = props[4][1].description.baths
+	console.log(prop4Baths)
+	document.querySelector('#propFourBaths').innerText = `${prop4Baths}`
+
+	let prop5Baths = props[5][1].description.baths
+	console.log(prop5Baths)
+	document.querySelector('#propFiveBaths').innerText = `${prop5Baths}`
+
+	let prop6Baths = props[6][1].description.baths
+	console.log(prop6Baths)
+	document.querySelector('#propSixBaths').innerText = `${prop6Baths}`
 	 
-	// let property1 = new MakeProperty(`${prop1Pic}`, `${prop1Price}`, `${prop1Beds}`, `${prop1Baths}`)
-	// console.log(property1)
 
 
 
@@ -161,4 +203,4 @@ const getProperty = async() => {
 	// console.log(price)
 	// console.log(baths)
 	// console.log(beds)
-// getProperty()
+getProperty()
