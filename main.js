@@ -7,7 +7,7 @@ const options = {
 };
 const getProperty = async() => {
 		
-	const response = await fetch('https://us-real-estate.p.rapidapi.com/for-sale?offset=0&limit=10&state_code=MI&city=Detroit&sort=newest', options)
+	const response = await fetch('https://us-real-estate.p.rapidapi.com/for-sale?offset=0&limit=10&state_code=CA&city=Oakland&sort=newest', options)
 	const data = await response.json();
 	let props = Object.entries(data.data.results)
 	console.log(props)
@@ -34,6 +34,61 @@ const getProperty = async() => {
 			
 			
 		// }
+	// Address
+
+	// PROP 1 ADDRESS
+	let p1Line = props[1][1].location.address.line
+	console.log(p1Line)
+	let p1City = props[1][1].location.address.city
+	let p1State = props[1][1].location.address.state_code
+	let p1Postal = props[1][1].location.address.postal_code
+	document.querySelector("#propOneAdd").innerText = `${p1Line}`;
+	document.querySelector("#propOneLoc").innerText = `${p1City}, ${p1State} ${p1Postal}`
+
+	// PROP 2 ADDRESS
+	let p2Line = props[0][1].location.address.line
+	console.log(p2Line)
+	let p2City = props[2][1].location.address.city
+	let p2State = props[2][1].location.address.state_code
+	let p2Postal = props[2][1].location.address.postal_code
+	document.querySelector("#propTwoAdd").innerText = `${p2Line}`;
+	document.querySelector("#propTwoLoc").innerText = `${p2City}, ${p2State} ${p2Postal}`
+
+	// PROP 3 ADDRESS
+	let p3Line = props[2][1].location.address.line
+	console.log(p3Line)
+	let p3City = props[2][1].location.address.city
+	let p3State = props[2][1].location.address.state_code
+	let p3Postal = props[2][1].location.address.postal_code
+	document.querySelector("#propThreeAdd").innerText = `${p3Line}`;
+	document.querySelector("#propThreeLoc").innerText = `${p3City}, ${p3State} ${p3Postal}`
+
+	// PROP 4 ADDRESS
+	let p4Line = props[4][1].location.address.line
+	console.log(p4Line)
+	let p4City = props[4][1].location.address.city
+	let p4State = props[4][1].location.address.state_code
+	let p4Postal = props[4][1].location.address.postal_code
+	document.querySelector("#propFourAdd").innerText = `${p4Line}`;
+	document.querySelector("#propFourLoc").innerText = `${p4City}, ${p4State} ${p4Postal}`
+
+	// PROP 5 ADDRESS
+	let p5Line = props[5][1].location.address.line
+	console.log(p5Line)
+	let p5City = props[5][1].location.address.city
+	let p5State = props[5][1].location.address.state_code
+	let p5Postal = props[5][1].location.address.postal_code
+	document.querySelector("#propFiveAdd").innerText = `${p5Line}`;
+	document.querySelector("#propFiveLoc").innerText = `${p5City}, ${p5State} ${p5Postal}`
+
+	// PROP 6 ADDRESS
+	let p6Line = props[6][1].location.address.line
+	console.log(p5Line)
+	let p6City = props[6][1].location.address.city
+	let p6State = props[6][1].location.address.state_code
+	let p6Postal = props[6][1].location.address.postal_code
+	document.querySelector("#propSixAdd").innerText = `${p1Line}`;
+	document.querySelector("#propSixLoc").innerText = `${p1City}, ${p1State} ${p1Postal}`
 
 	// PROPERTY IMAGES!!!
 
@@ -41,7 +96,7 @@ const getProperty = async() => {
 	console.log(prop1Pic);
 	document.querySelector("#propOnePic").src = `${prop1Pic}`;
 
-	let prop2Pic = props[2][1].primary_photo.href;
+	let prop2Pic = props[0][1].primary_photo.href;
 	console.log(prop1Pic);
 	document.querySelector("#propTwoPic").src = `${prop2Pic}`;
 
@@ -68,7 +123,7 @@ const getProperty = async() => {
 	console.log(prop1Price);
 	document.querySelector('#propOnePrice').innerHTML = `${prop1Price}`;
 
-	let prop2Price = props[2][1].list_price;
+	let prop2Price = props[0][1].list_price;
 	console.log(prop2Price);
 	document.querySelector('#propTwoPrice').innerText = `${prop2Price}`;
 
@@ -90,11 +145,11 @@ const getProperty = async() => {
 
 	// PROPERTY BEDS!!
 
-	let prop1Beds = props[1][1].description.beds;
+	let prop1Beds = props[2][1].description.beds;
 	console.log(prop1Beds)
 	document.querySelector('#propOneBeds').innerText = `${prop1Beds}`;
 
-	let prop2Beds = props[2][1].description.beds;
+	let prop2Beds = props[0][1].description.beds;
 	console.log(prop2Beds)
 	document.querySelector('#propTwoBeds').innerText = `${prop2Beds}`;
 
@@ -116,11 +171,11 @@ const getProperty = async() => {
 
 	// PROPERTY BATHS!!!
 
-	let prop1Baths = props[1][1].description.baths
+	let prop1Baths = props[2][1].description.baths
 	console.log(prop1Baths)
 	document.querySelector('#propOneBaths').innerText = `${prop1Baths}`
 
-	let prop2Baths = props[2][1].description.baths
+	let prop2Baths = props[0][1].description.baths
 	console.log(prop2Baths)
 	document.querySelector('#propTwoBaths').innerText = `${prop2Baths}`
 	
@@ -203,4 +258,4 @@ const getProperty = async() => {
 	// console.log(price)
 	// console.log(baths)
 	// console.log(beds)
-getProperty()
+// getProperty()
