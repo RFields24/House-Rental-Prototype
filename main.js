@@ -264,4 +264,4 @@ const getProperty = async() => {
 	// console.log(price)
 	// console.log(baths)
 	// console.log(beds)
-getProperty()
+// getProperty()
