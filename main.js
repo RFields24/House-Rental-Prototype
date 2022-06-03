@@ -120,28 +120,34 @@ const getProperty = async() => {
 
 
 	let prop1Price = props[1][1].list_price;
+	prop1Price = prop1Price.toLocaleString('en-US');
 	console.log(prop1Price);
-	document.querySelector('#propOnePrice').innerHTML = `${prop1Price}`;
+	document.querySelector('#propOnePrice').innerHTML = `$${prop1Price}`;
 
 	let prop2Price = props[0][1].list_price;
+	prop2Price = prop2Price.toLocaleString('en-US');
 	console.log(prop2Price);
-	document.querySelector('#propTwoPrice').innerText = `${prop2Price}`;
+	document.querySelector('#propTwoPrice').innerText = `$${prop2Price}`;
 
 	let prop3Price = props[3][1].list_price;
+	prop3Price = prop3Price.toLocaleString('en-US');
 	console.log(prop3Price);
-	document.querySelector('#propThreePrice').innerText = `${prop3Price}`;
+	document.querySelector('#propThreePrice').innerText = `$${prop3Price}`;
 
 	let prop4Price = props[4][1].list_price;
+	prop4Price = prop4Price.toLocaleString('en-US');
 	console.log(prop4Price);
-	document.querySelector('#propFourPrice').innerText = `${prop4Price}`;
+	document.querySelector('#propFourPrice').innerText = `$${prop4Price}`;
 
 	let prop5Price = props[5][1].list_price;
+	prop5Price = prop5Price.toLocaleString('en-US');
 	console.log(prop5Price);
-	document.querySelector('#propFivePrice').innerText = `${prop5Price}`;
+	document.querySelector('#propFivePrice').innerText = `$${prop5Price}`;
 
 	let prop6Price = props[6][1].list_price;
+	prop6Price = prop6Price.toLocaleString('en-US');
 	console.log(prop6Price);
-	document.querySelector('#propSixPrice').innerText = `${prop6Price}`;
+	document.querySelector('#propSixPrice').innerText = `$${prop6Price}`;
 
 	// PROPERTY BEDS!!
 
@@ -258,4 +264,4 @@ const getProperty = async() => {
 	// console.log(price)
 	// console.log(baths)
 	// console.log(beds)
-// getProperty()
+getProperty()
