@@ -17,11 +17,32 @@
     <body>
         <!-- GEOLOCATION??? -->
         <script>
+            // CHECK IF GEOLOCATION AVAILABLE
             if('geolocation' in navigator) {
             console.log('geolocation is available')
+            navigator.geolocation.getCurrentPosition(position => {
+                // LOG LAT AND LONG DATA
+                const lat = position.coords.latitude
+               console.log(lat)
+               const long = position.coords.longitude
+               console.log(long)
+
+               const KEY = 'AIzaSyDS6NJFPO_mMQ0r2NBTDfdWjbU4URLgEUk'
+                
+               let url = `https://maps.googlpeapi.com/maps/api/geocode/json?location={lat:${lat}, lng:${long}}&key=${KEY}`
+
+               fetch(url)
+               .then(response => response.json())
+               .then(data => {
+                   console.log(data)
+               })
+               .catch(error => console.log(error.message))
+            });
         } else {
             console.log('geolocation is not available')
         }
+
+
         </script>
 
         <!-- HEADER -->
