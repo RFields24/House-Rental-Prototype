@@ -5,9 +5,66 @@ const options = {
 		'X-RapidAPI-Key': '1d69d7893amsh788b07db274a5a5p1be532jsn3c7b30139e1d'
 	}
 };
-const getProperty = async() => {
+
+// GET USER LOCATION WITH PERMISSION
+
+if(navigator.geolocation){
+
+	// GET COORDINATES AND GEOCODE TO CITY AND STATE
+
+	navigator.geolocation.getCurrentPosition(async (position) => {
+		const { longitude, latitude } = position.coords;
+		console.log({longitude, latitude}, "$$$$");
 		
-	const response = await fetch('https://us-real-estate.p.rapidapi.com/for-sale?offset=0&limit=10&state_code=CA&city=Oakland&sort=newest', options)
+		// GOOGLE API GEOCODE
+		const location = await fetch(
+			`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=AIzaSyDS6NJFPO_mMQ0r2NBTDfdWjbU4URLgEUk`
+		)
+		.then(response => response.json());
+		console.log(location)
+				// THIS GETS CITY NAME 
+
+		var city = location.results[0].address_components[2].long_name;
+		console.log(city)
+				// THIS GET STATE NAME
+
+		var state = location.results[0].address_components[4].short_name;
+		// console.log(state)
+	
+const getProperty = async() => {
+
+	// if(navigator.geolocation){
+
+	// 	// GET COORDINATES AND GEOCODE TO CITY AND STATE
+	
+	// 	navigator.geolocation.getCurrentPosition(async (position) => {
+	// 		const { longitude, latitude } = position.coords;
+	// 		console.log({longitude, latitude}, "$$$$");
+			
+	// 		// GOOGLE API GEOCODE
+	// 		const location = await fetch(
+	// 			`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=AIzaSyDS6NJFPO_mMQ0r2NBTDfdWjbU4URLgEUk`
+	// 		)
+	// 		.then(response => response.json());
+	// 		console.log(location)
+	// 				// THIS GETS CITY NAME 
+	
+	// 		var city = location.results[0].address_components[2].long_name;
+	// 		// console.log(city)
+	// 				// THIS GETS STATE NAME
+	
+	// 		var state = location.results[0].address_components[4].short_name;
+	// 		console.log(state)
+	// 	});
+	
+	
+	console.log(city)
+
+	
+	// CITY AND STATE NAME GET PASSED INTO FETCH CALL
+
+
+	const response = await fetch(`https://us-real-estate.p.rapidapi.com/for-sale?offset=0&limit=10&state_code=${state}&city=${city}&sort=relevant`, options)
 	const data = await response.json();
 	let props = Object.entries(data.data.results)
 	console.log(props)
@@ -235,7 +292,7 @@ const getProperty = async() => {
 	
 	
 			// beds.innerText = props[i][1].description.beds
-			// baths.innerText = props[1][1].description.baths
+							// baths.innerText = props[1][1].description.baths
 			// beds.innerText = props[1][1].description.beds
 			// price.innerText = props[1][1].description.list_price
 }
@@ -264,4 +321,7 @@ const getProperty = async() => {
 	// console.log(price)
 	// console.log(baths)
 	// console.log(beds)
-// getProperty()
+getProperty()
+});
+
+}
