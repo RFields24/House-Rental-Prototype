@@ -491,3 +491,59 @@ header{
         padding-top: 90%;
     }
 }
+
+
+/* PROPERTY DETAILS PAGE!!!!! */
+.showcase{
+    margin-top: 6rem;
+}
+
+.showcase-image{
+    background: url(/img/p2.jpg);
+    background-size: cover;
+    background-position: top;
+    border-radius: 5px;
+    width: 90%;
+    height: 500px;
+    margin: 0 auto 0 auto;
+}
+
+/* PROPERTY INFO */
+
+.property-info-container{
+    width: 40%;
+    margin-left: 2.3rem;
+}
+
+.info-scroll-container{
+    width: 90%;
+    padding: 2rem 2.5rem;
+}
+
+.info-header{
+    width: 75%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info-header i{
+    font-size: 25px;
+}
+
+.info-details{
+    width: 100%;
+    height: 50%;
+    font-size: 1rem;
+}
+
+
+
+
+
+/* IMAGE GALLERY */
+
+.image-gallery{
+    width: 60%;
+}
