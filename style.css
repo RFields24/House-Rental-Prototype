@@ -528,17 +528,27 @@ header{
     width: 100%;
     height: 20%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     padding-top: 1rem;
+}
+.info{
+    padding-top: 1rem;
+    width: 100%;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center
+}
+.info span{
+    font-size: 1.2rem;
 }
 
 .info-header i{
-    font-size: 25px;
+    font-size: 30px;
 }
 
 .info-header h2{
-    font-size: 2rem;
+    font-size: 2.4rem;
 }
 
 .info-details{
@@ -547,7 +557,13 @@ header{
     height: 50%;
     font-size: 1.3rem;
 }
+
+.info-details h3, .info-details h4{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
 .status{
+    margin-top: 1rem;
     display: flex;
     align-items: center;
 }
@@ -569,20 +585,21 @@ header{
 .image-gallery{
     display: flex;
     flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
     width: 60%;
-    padding-top: 1rem;
-    padding-right: 0;
+    padding:  1rem 0 5rem 0;
+
     
 }
 .gallery-image{
-    background-image: url(/img/p2.jpg);
+     background-image: url(/img/p2.jpg);
     background-size: cover;
     width: 48%;
     height: 200px;
     border-radius: 5px;
     padding: 1rem;
-    padding-bottom: 1rem;
-    margin: .2rem;
+    margin: .2rem; 
 }
 
 /* ACTION SECTION */
@@ -598,10 +615,62 @@ header{
 /* MAP   */
 
 .map{
-    padding-top: 1rem;
+    padding-top: 3rem;
     border-radius: 5px;
 }
 
 .map iframe{
     border-radius: 5px;
+}
+/* SCHOOLS COMPONENTS  */
+
+.school-container{
+    padding: 1rem;
+    margin: 2rem 0 2rem 0;
+}
+.school{
+    margin-top: 1.5rem
+}
+
+.school h3{
+    border-bottom: 1px solid black;
+}
+.school h4{
+    margin-top: .5rem;
+}
+
+.school-bottom{
+    display: flex;
+}
+.left {
+   display : flex;
+   flex-direction: column;
+}
+.right {
+    padding: 1rem;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.rating{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 3px solid var(--main-color);
+    border-left: 3px solid var(--main-color);
+    border-radius: 50%;
+    border-top: 3px solid white;
+    border-bottom: 3px solid var(--main-color);
+    width: 60px;
+    height: 60px;
+    transform: rotate(-45deg);
+    
+}
+
+.rating span{
+    transform: rotate(45deg);
 }
