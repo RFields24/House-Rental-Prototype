@@ -541,10 +541,22 @@ header{
 }
 .info span{
     font-size: 1.2rem;
+    height: 100%;
 }
 
 .info-header i{
     font-size: 30px;
+}
+.square-num{
+    font-size: 5px;
+}
+
+.bed, .bath, .sqft{
+    text-align: center;
+}
+.bed span, .bath span{
+    padding-left: .5rem;
+    vertical-align: middle;
 }
 
 .info-header h2{
@@ -581,14 +593,18 @@ header{
 
 
 /* IMAGE GALLERY */
+.gallery-container{
+    width: 60%;
+    padding:  1rem 0 5rem 0;
+}
 
 .image-gallery{
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     align-content: flex-start;
-    width: 60%;
-    padding:  1rem 0 5rem 0;
+    width: 100%;
+    /* padding:  1rem 0 5rem 0; */
 
     
 }
@@ -625,11 +641,16 @@ header{
 /* SCHOOLS COMPONENTS  */
 
 .school-container{
-    padding: 1rem;
+    /* padding: 1rem; */
     margin: 2rem 0 2rem 0;
 }
 .school{
-    margin-top: 1.5rem
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: var(--bg-color);
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
 }
 
 .school h3{
@@ -673,4 +694,21 @@ header{
 
 .rating span{
     transform: rotate(45deg);
+}
+
+/* SIMILAR HOMES/RECOMMENDED HOMES */
+
+.homes h1{
+    margin: 3rem auto 1rem auto;
+}
+#home-price{
+    font-size: 1.2rem;
+}
+#home-add {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+#home-loc{
+    padding-top: 2rem;
+    font-weight: 600;
 }
